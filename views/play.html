@@ -1,0 +1,23 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/play.css">
+</head>
+<body>
+<div class="player">
+  <{{ type }} controls class="player-inner">
+    <source type="{{ mediaType }}" src="/raw/{{ media | url_encode }}">
+    {% if subType %}
+      <track label="Subtitle" kind="subtitles" src="/{{ subType }}/{{ subtitle | url_encode }}" srclang="ko" default>
+    {% endif %}
+  </{{ type }}>
+</div>
+<script src="/static/jquery.min.js"></script>
+<script src="/static/play.js"></script>
+</body>
+</html>
+{% spaceless %}

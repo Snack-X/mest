@@ -1,0 +1,45 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mest - Index of /{{ directory }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/normalize.min.css">
+  <link rel="stylesheet" href="/static/list.css">
+</head>
+<body>
+  <h1><a href="/list">Mest</a></h1>
+  <h2>Index of <code>/{{ directory }}</code></h2>
+  <table>
+    <thead>
+      <tr><th>NAME</th><th>SIZE</th><th>DATE</th></tr>
+    </thead>
+    <tbody>
+    {% for entry in entries %}
+      <tr>
+        <td>
+        {% if entry.type === "file" %}
+          {% if entry.sub.length === 0 %}
+            <a href="/play/{{ entry.link }}">{{ entry.name }}</a>
+          {% elseif entry.sub.length === 1 %}
+            <a href="/play/{{ entry.link }}?sub={{ entry.sub[0] }}">{{ entry.name }}</a>
+          {% else %}
+            <span>{{ entry.name }}</span>
+            {% for sub in entry.sub %}
+              <span> | <a href="/play/{{ entry.link }}?sub={{ sub }}">{{ sub | upper }}</a></span>
+            {% endfor %}
+          {% endif %}
+        {% else %}
+          <a href="/list/{{ entry.link }}">{{ entry.name }}</a>
+        {% endif %}
+        </td>
+        <td>{{ entry.size }}</td>
+        <td>{{ entry.date|date("Y-m-d H:i:s") }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
+{% endspaceless %}
