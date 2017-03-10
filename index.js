@@ -29,6 +29,7 @@ app.use(koaMount("/static", koaStatic(path.join(__dirname, "static"))));
 app.use(_.get("/list/:path*", require("./route-list")));
 app.use(_.get("/play/:path*", require("./route-play")));
 app.use(_.get("/smi/:path*", require("./route-smi")));
+app.use(_.get("/ass/:path*", require("./route-ass")));
 app.use(_.get("/raw/:path*", require("./route-raw")));
 app.use(_.get("/", function* () {
   this.redirect("/list");

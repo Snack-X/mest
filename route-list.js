@@ -47,6 +47,7 @@ module.exports = function* list(reqPath = "") {
       let parsed = path.parse(name);
       let filename = parsed.name;
       if(fileList.includes(filename + ".smi")) entry.sub.push("smi");
+      if(fileList.includes(filename + ".ass")) entry.sub.push("ass");
     }
     else return;
 

@@ -5,7 +5,7 @@ Media Streamer
 * `.mp3`
 * `.mp4`
   * SAMI(`.smi`) to WebVTT
-  * *ASS support planned*
+  * ASS(`.ass`) to WebVTT
 
 ## Usage
 

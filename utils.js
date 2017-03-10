@@ -6,7 +6,7 @@ const path = require("path");
 module.exports.isMedia = name => /\.(mp3|flac|ogg|mp4|webm)$/.test(name);
 module.exports.isAudio = name => /\.(mp3|flac|ogg)$/.test(name);
 module.exports.isVideo = name => /\.(mp4|webm)$/.test(name);
-module.exports.isSubtitle = name => /\.(smi)$/.test(name);
+module.exports.isSubtitle = name => /\.(smi|ass)$/.test(name);
 
 module.exports.resolvePath = (ctx, reqPath) => {
   // Resolve path

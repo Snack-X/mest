@@ -14,6 +14,7 @@
     "koa-send": "^3.3.0",
     "koa-static": "^2.1.0",
     "koa-swig": "^2.2.1",
+    "libjass": "^0.11.0",
     "mime-types": "^2.1.14",
     "sami-parser": "^0.5.3",
     "swig-templates": "^2.0.2"

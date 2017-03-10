@@ -25,7 +25,7 @@ module.exports = function* play(reqPath = "") {
 
   // Handle query `sub`
   let subType = this.query.sub || "";
-  if(subType === "smi") {
+  if(subType === "smi" || subType === "ass") {
     this.state.subType = subType;
     this.state.subtitle = filename + "." + subType;
   }
